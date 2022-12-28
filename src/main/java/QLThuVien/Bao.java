@@ -2,6 +2,7 @@ package QLThuVien;
 
 public class Bao extends TaiLieu{
     private int ngayPhatHanh;
+    private TaiLieu taiLieu;
 
     public Bao(String maTaiLieu, String tenNhaXuatBan, String soPhatHanh, int ngayPhatHanh) {
         super(maTaiLieu, tenNhaXuatBan, soPhatHanh);

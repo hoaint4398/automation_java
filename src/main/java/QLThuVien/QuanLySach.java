@@ -4,52 +4,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuanLySach {
-    private List<Sach> danhSachSach;
-    private List<TapChi> danhSachTapChi;
-    private List<Bao> danhSachBao;
+    private List<TaiLieu> taiLieuList;
 
-    public QuanLySach(List<Sach> danhSachSach, List<TapChi> danhSachTapChi, List<Bao> danhSachBao) {
-        this.danhSachSach = danhSachSach;
-        this.danhSachTapChi = danhSachTapChi;
-        this.danhSachBao = danhSachBao;
+    public QuanLySach(List<TaiLieu> taiLieuList) {
+        this.taiLieuList = taiLieuList;
     }
 
-    public QuanLySach(){
-        this.danhSachSach = new ArrayList<>();
-        this.danhSachBao = new ArrayList<>();
-        this.danhSachTapChi = new ArrayList<>();
+    public QuanLySach(){}
+
+    public List<TaiLieu> getTaiLieuList() {
+        return taiLieuList;
     }
 
-    public List<Sach> getDanhSachSach() {
-        return danhSachSach;
+    public void setTaiLieuList(List<TaiLieu> taiLieuList) {
+        this.taiLieuList = taiLieuList;
     }
 
-    public void setDanhSachSach(List<Sach> danhSachSach) {
-        this.danhSachSach = danhSachSach;
+    public void themTaiLieuQLSach(TaiLieu taiLieu){
+        taiLieuList.add(taiLieu);
     }
 
-    public List<TapChi> getDanhSachTapChi() {
-        return danhSachTapChi;
+    public void searchMaTaiLieu(String maTaiLieu){
+        for (TaiLieu tl:taiLieuList) {
+            if(tl.getMaTaiLieu().equalsIgnoreCase(maTaiLieu)) System.out.println(tl);
+        }
     }
 
-    public void setDanhSachTapChi(List<TapChi> danhSachTapChi) {
-        this.danhSachTapChi = danhSachTapChi;
+    public void deleteTaiLieu(String maTaiLieu){
+        taiLieuList.remove(getTaiLieuList().stream().filter(v->v.getMaTaiLieu().equalsIgnoreCase(maTaiLieu)));
     }
 
-    public List<Bao> getDanhSachBao() {
-        return danhSachBao;
-    }
-
-    public void setDanhSachBao(List<Bao> danhSachBao) {
-        this.danhSachBao = danhSachBao;
-    }
-
-    @Override
-    public String toString() {
-        return "QuanLySach{" +
-                "danhSachSach=" + danhSachSach +
-                ", danhSachTapChi=" + danhSachTapChi +
-                ", danhSachBao=" + danhSachBao +
-                '}';
+    public void printTaiLieuQLSach(){
+        for (TaiLieu tl:taiLieuList) {
+            System.out.println(tl);
+        }
     }
 }

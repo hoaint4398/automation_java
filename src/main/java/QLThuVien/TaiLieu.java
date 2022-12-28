@@ -1,7 +1,7 @@
 package QLThuVien;
 
 
-public class TaiLieu {
+public  class TaiLieu {
     private String maTaiLieu;
     private String tenNhaXuatBan;
     private String soPhatHanh;
@@ -48,4 +48,6 @@ public class TaiLieu {
                 ", soPhatHanh='" + soPhatHanh + '\'' +
                 '}';
     }
+
+    public void searchTaiieu(){}
 }
